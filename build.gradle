@@ -1,0 +1,128 @@
+plugins {
+    id 'java'
+    id "io.freefair.lombok" version "8.10"
+    id 'io.qameta.allure' version '2.12.0'
+}
+
+group = 'tests.vikunja.io'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def allureVersion = "2.29.0",
+    restAssuredVersion = "5.5.0",
+    junitVersion = "5.11.0",
+    selenideVersion = "7.5.0",
+    assertjCoreVersion = "3.26.0",
+    javafakerVersion = "1.0.2",
+    ownerVersion = "1.0.12",
+    slf4jSimpleVersion = "2.0.16",
+    appiumVersion = "9.3.0",
+    commonsVersion = "2.16.0"
+
+allure
+        {
+            report {
+                version.set(allureVersion)
+            }
+            adapter {
+                aspectjWeaver.set(true)
+                frameworks {
+                    junit5 {
+                        adapterVersion.set(allureVersion)
+                    }
+                }
+            }
+        }
+
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:$selenideVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "io.rest-assured:rest-assured:$restAssuredVersion",
+            "io.qameta.allure:allure-rest-assured:$allureVersion",
+            "io.appium:java-client:$appiumVersion",
+            "io.rest-assured:json-schema-validator:$restAssuredVersion",
+            "org.assertj:assertj-core:$assertjCoreVersion",
+            "com.github.javafaker:javafaker:$javafakerVersion",
+            "org.aeonbits.owner:owner:$ownerVersion",
+            "org.slf4j:slf4j-simple:$slf4jSimpleVersion",
+            "commons-io:commons-io:$commonsVersion",
+            "org.junit.jupiter:junit-jupiter:$junitVersion"
+    )
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+task web(type: Test) {
+    useJUnitPlatform {
+        includeTags("Web")
+    }
+}
+
+task api(type: Test) {
+    useJUnitPlatform {
+        includeTags("API")
+    }
+}
+
+task mobile(type: Test) {
+    useJUnitPlatform {
+        includeTags("Mobile")
+    }
+}
+
+task general_settings(type: Test) {
+    useJUnitPlatform {
+        includeTags("GeneralSettings")
+    }
+}
+
+task registration(type: Test) {
+    useJUnitPlatform {
+        includeTags("Registration")
+    }
+}
+
+task search(type: Test) {
+    useJUnitPlatform {
+        includeTags("Search")
+    }
+}
+
+task label(type: Test) {
+    useJUnitPlatform {
+        includeTags("Label")
+    }
+}
+
+task token(type: Test) {
+    useJUnitPlatform {
+        includeTags("Token")
+    }
+}
+
+task login(type: Test) {
+    useJUnitPlatform {
+        includeTags("Login")
+    }
+}
+
+task task(type: Test) {
+    useJUnitPlatform {
+        includeTags("Task")
+    }
+}
