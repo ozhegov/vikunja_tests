@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 @Owner("Maksim Ozhegov")
-@Epic("Настройки задач")
-@Feature("Управление настройками задач в мобильном приложениии")
+@Epic("Редактирование задач")
+@Feature("Редактирование задач в мобильном приложениии")
 @Tags({@Tag("Mobile"), @Tag("Task")})
-@DisplayName("Проверки функционирования настроек приложения")
+@DisplayName("Проверки функционирования редактирования задач")
 public class TaskTests extends TestBase{
 
     @Test
