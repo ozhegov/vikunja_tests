@@ -77,7 +77,6 @@ Vikunja — приложение для управления задачами с
   <a href="https://developer.android.com/studio"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" height="50" width="50" alt="Android Studio"/></a>
   <a href="https://aerokube.com/selenoid/"><img src="https://aerokube.com/img/aerokube_logo.svg" width="50" height="50" alt="Selenoid"/></a>
   <a href="https://gradle.org/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gradle/gradle-original.svg" width="50" height="50" alt="Geadle"/></a>
-  <a href="https://github.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width="50" height="50" alt="GitHub"/></a>
   <a href="https://www.jenkins.io/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="50" height="50" alt="Jenkins"/></a>
   <a href="https://allurereport.org"><img src="https://github.com/ozhegov/universe_data_ui_tests/blob/main/images/logo/Allure.svg" width="50" height="50"  alt="Allure Report"/></a>
   <a href="https://qameta.io/"><img src="https://github.com/ozhegov/universe_data_ui_tests/blob/main/images/logo/Allure_TO.svg" width="50" height="50"  alt="Allure TestOps"/></a>
