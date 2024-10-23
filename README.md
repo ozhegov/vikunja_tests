@@ -146,6 +146,98 @@ flowchart LR
 <a id="local"></a>
 ### Локальный запуск
 
+Для запуска потребуется открыть IntelliJ IDEA и выполнить в терминале команды.
+
+> [!NOTE]
+> Перед запусками тестов в папке <code>resources/config</code> необходимо создать файл <code>auth.properties</code> и поместить туда: <br/>
+>
+> <code>vikunjaUsername</code> - логин зарегистрированного в приложении пользователя <br/>
+> <code>vikunjaPassword</code> - логин зарегистрированного в приложении пользователя <br/>
+> <code>vikunjaServerAddress</code> - адрес сервера, на котором развернуто мобильное приложение <br/>
+> 
+> **Пример файла:** <br/>
+> ```
+> vikunjaUsername=user12345
+> vikunjaPassword=Test12345
+> vikunjaServerAddress=https://try.vikunja.io
+> ```
+> При использовании адреса сервера демо-версии приложения https://try.vikunja.io зарегистрировать пользователя можно по [ссылке](https://try.vikunja.io/register)
+
+#### Все тесты
+
+```bash
+gradle clean test
+```
+
+##### UI-тесты
+
+```bash
+gradle clean web
+```
+###### UI-тесты на проверку регистрации
+```bash
+gradle clean registration
+```
+###### UI-тесты на проверку поиска
+```bash
+gradle clean search
+```
+###### UI-тесты на проверку настроек приложения
+```bash
+gradle clean general_settings
+```
+**Конфигурационные параметры:**
+
+<code>-DbaseUrl</code> - адрес сервера (веб-интерфейс), на котором развернуто приложение (по умолчанию: <code>https://try.vikunja.io</code>) <br/>
+<code>-DbaseURI</code> - адрес сервера (API), на котором развернуто приложение (по умолчанию: <code>https://try.vikunja.io</code>) <br/>
+<code>-Dbrowser</code> - наименования браузера для запуска тестов (по умолчанию: <code>chrome</code>) <br/>
+<code>-DbrowserSize</code> - размер окна браузера (по умолчанию: <code>1920x1080</code>) <br/>
+<code>-DbrowserVersion</code> - номер версии браузера (по умолчанию: <code>120.0</code>) <br/>
+
+##### API-тесты
+
+```bash
+gradle clean api
+```
+###### API-тесты на проверку функционирования токенов
+```bash
+gradle clean token
+```
+###### API-тесты на проверку функционирования лейблов
+```bash
+gradle clean label
+```
+##### Mobile-тесты
+
+```bash
+gradle clean mobile
+```
+
+> [!NOTE]
+> Перед запусками тестов необходимо дополнительно установить: <br/>
+> 
+> * Запуск с использованием эмулятора - Android Studio и Appium Server - [инcтрукция по настройке](https://autotest.how/appium-setup-for-local-android-tutorial-md)
+>   
+> * Запуск с использованием эмулятора - Appium Server и в файле <code>resources/config/real.properties</code> указать <code>platformVersion</code> и <code>deviceName</code> вашего устройства
+
+###### Mobile-тесты на проверку функционирования авторизации
+
+```bash
+gradle clean login
+```
+
+###### Mobile-тесты на проверку функционирования задач
+
+```bash
+gradle clean task
+```
+
+**Конфигурационные параметры:**
+
+<code>-DdeviceHost</code> - метод запуска тестов. По умолчанию: <code>browserstack</code> - удаленный запуск тестов, необходимо заменить на: <br/>
+   - <code>-DdeviceHost=emulation</code> - для запуска на эмуляторе через Android Studio <br/>
+   - <code>-DdeviceHost=real</code> - для запуска на реальном устройстве <br/>
+
 <a id="remote"></a>
 ### Удаленный запуск
 
