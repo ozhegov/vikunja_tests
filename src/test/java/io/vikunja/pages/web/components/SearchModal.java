@@ -32,9 +32,8 @@ public class SearchModal {
     }
 
     @Step("Проверяем, что в результатах поиска отображается искомое название - {searchValue}")
-    public SearchModal checkSearchValueAppears(String searchValue) {
+   public void checkSearchValueAppears(String searchValue) {
         searchResult.shouldHave(text(searchValue));
-        return this;
     }
 
     @Step("Проверяем, что в результатах поиска отображается название искомого лейбла - {labelName}")
