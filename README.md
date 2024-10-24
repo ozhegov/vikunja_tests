@@ -282,9 +282,9 @@ gradle clean task
    - <code>-DdeviceHost=redmi</code> - для запуска на Xiaomi Redmi Note 11 v.11.0 <br/>
 
 > [!NOTE]
-> Возможно добавить новые мобильные устрйоства для запусков тестов в BrowserStack. Для этого в папке <code>resources/config/browserstack</code> необходимо создать файл <code>*название_устройства*.properties</code> и поместить туда: <br/>
+> Возможно добавить новые мобильные устройства для запусков тестов в BrowserStack. Для этого в папке <code>resources/config/browserstack</code> необходимо создать файл <code>*название_устройства*.properties</code> и поместить туда: <br/>
 >
-> <code>app=bs://7ae582e9f72cb3ebd6ee90d18199755709133876</code> - адрес приложения в BrowserStack (остается неизменным) <br/>
+> <code>app</code> - адрес приложения в BrowserStack <br/>
 > <code>device</code> - название девайса <br/>
 > <code>version</code> - версия ОС <br/>
 > <code>project</code> - название проекта <br/>
@@ -300,6 +300,8 @@ gradle clean task
 > build=browserstack-vikunja-pixel-build
 > remoteUrl=https://hub.browserstack.com/wd/hub
 > ```
+> Чтобы загрузить приложение в BrowserStack можно воспользоваться [инcтрукцией](https://www.browserstack.com/docs/app-automate/api-reference/appium/apps).<br/>
+> [Ссылка](https://github.com/go-vikunja/app/releases/download/0.1.8-beta/app-production-release-0.1.8-beta.apk) на мобильное приложение Vikunja на GitHub.
 
 
 <a id="jenkins"></a>
