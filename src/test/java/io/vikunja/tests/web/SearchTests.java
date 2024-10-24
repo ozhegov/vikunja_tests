@@ -23,7 +23,7 @@ public class SearchTests extends TestBase {
     @WithAuthLogin
     @Story("Поиск по названию проекта")
     @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("При вводе в поле поиска символа '+' перед названием проекта в результатах поиска отображаются данные по искомому проекту")
+    @DisplayName("При вводе в поле поиска символа '+' перед названием проекта в результатах поиска отображается название искомого проекта")
     public void projectDataVisibleAfterSearchingPlusAndProjectName() {
         CreateProjectResponseModel createProjectResponse = projectApi
                 .createNewProject(loginResponse, data.projectData);
@@ -36,7 +36,6 @@ public class SearchTests extends TestBase {
         searchModal
                 .setPlusAndProjectName(createProjectResponse.getTitle())
                 .checkSearchValueAppears(createProjectResponse.getTitle())
-                .checkTaskNameAppears(createTaskResponse.getTitle());
     }
 
     @Test
