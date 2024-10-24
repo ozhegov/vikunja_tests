@@ -37,11 +37,6 @@ public class SearchModal {
         return this;
     }
 
-    @Step("Проверяем, что в результатах поиска отображается название созданной в рамках этого проекта задачи - {taskName}")
-    public void checkTaskNameAppears(String taskName) {
-        searchTasksResult.shouldHave(text(taskName));
-    }
-
     @Step("Проверяем, что в результатах поиска отображается название искомого лейбла - {labelName}")
     public void checkLabelNameAppears(String labelName) {
         searchLabelResult.shouldHave(text(labelName));
