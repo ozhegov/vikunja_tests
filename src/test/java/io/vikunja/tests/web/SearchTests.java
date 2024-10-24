@@ -35,7 +35,7 @@ public class SearchTests extends TestBase {
                 .clickSearchIcon();
         searchModal
                 .setPlusAndProjectName(createProjectResponse.getTitle())
-                .checkSearchValueAppears(createProjectResponse.getTitle())
+                .checkSearchValueAppears(createProjectResponse.getTitle());
     }
 
     @Test
