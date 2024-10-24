@@ -309,7 +309,7 @@ gradle clean task
 ## <img alt="Jenkins" height="25" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="25"/></a><a name="Сборка в Jenkins"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/C28-vikunja-tests_ozhegov)</a>
 
 <p align="center">  
-<img title="Jenkins Main" src="images/screenshotsscreenshots/jenkins_build.png" width="850">  
+<img title="Jenkins Main" src="images/screenshots/jenkins_build.png" width="850">  
 </p>
 
 Для запуска сборки необходимо перейти в раздел <code>Build with Parameters</code>, выбрать параметры сборки и нажать кнопку <code>Build</code>
@@ -380,7 +380,7 @@ gradle clean task
 
 ### Web
 <p align="center">  
-<img title="Selenoid Web Video" src="images/video/web_video_example.gif" width="550" height="350"  alt="video">  
+<img title="Selenoid Web Video" src="images/video/web_video_example.gif" alt="video">  
 </p>
 
 ### Mobile
