@@ -40,6 +40,7 @@ Vikunja — приложение для управления задачами с
 
 **Особенности проекта**:
 - UI-тесты, API и мобильные тесты на Android в одном проекте
+  
 - Использование шаблона проектирования Page Object
 - Вариативность запуска тестов: локально, удалённо, по тегам
 - Конфигурирование с помощью библиотеки [Owner](https://matteobaccan.github.io/owner/):
@@ -305,7 +306,7 @@ gradle clean task
 
 
 <a id="jenkins"></a>
-## <img alt="Jenkins" height="25" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="25"/></a><a name="Сборка в Jenkins"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/C27-universe_data_ui_tests/)</a>
+## <img alt="Jenkins" height="25" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="25"/></a><a name="Сборка в Jenkins"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/C28-vikunja-tests_ozhegov)</a>
 
 <p align="center">  
 <img title="Jenkins Main" src="images/screenshotsscreenshots/jenkins_build.png" width="850">  
@@ -320,7 +321,7 @@ gradle clean task
 <a id="integrations"></a>
 ## Интеграции
 <a id="allure"></a>
-### <img alt="Allure" height="25" src="https://github.com/ozhegov/universe_data_ui_tests/blob/main/images/logo/Allure.svg" width="25"/></a><a name="Интеграция с Allure Report"></a>Интеграция с [Allure Report](https://jenkins.autotests.cloud/job/C27-universe_data_ui_tests/allure/)</a>
+### <img alt="Allure" height="25" src="https://github.com/ozhegov/universe_data_ui_tests/blob/main/images/logo/Allure.svg" width="25"/></a><a name="Интеграция с Allure Report"></a>Интеграция с [Allure Report](https://jenkins.autotests.cloud/job/C28-vikunja-tests_ozhegov/allure/)</a>
 
 #### *Основная страница отчёта*
 
@@ -341,7 +342,7 @@ gradle clean task
 </p>
 
 <a id="allure-testops"></a>
-### <img alt="Allure TestOps" height="25" src="https://github.com/ozhegov/universe_data_ui_tests/blob/main/images/logo/Allure_TO.svg" width="25"/></a><a name="Интеграция с Allure TestOps"></a>Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/4337/)</a>
+### <img alt="Allure TestOps" height="25" src="https://github.com/ozhegov/universe_data_ui_tests/blob/main/images/logo/Allure_TO.svg" width="25"/></a><a name="Интеграция с Allure TestOps"></a>Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/4482)</a>
 
 #### *Dashboard*
 
@@ -362,7 +363,7 @@ gradle clean task
 </p>
 
 <a id="jira"></a>
-### <img alt="Jira" height="25" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" width="25"/></a><a name="Интеграция с Jira"></a>Интеграция с [Jira]()</a>
+### <img alt="Jira" height="25" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" width="25"/></a><a name="Интеграция с Jira"></a>Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-1362)</a>
 
 <p align="center">  
 <img title="Jira" src="images/screenshots/jira_integration.png" width="850">  
