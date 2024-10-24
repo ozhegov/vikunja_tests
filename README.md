@@ -241,16 +241,82 @@ gradle clean task
 <a id="remote"></a>
 ### Удаленный запуск
 
-<a id="integrations"></a>
-## Интеграции
+Тесты можно запустить из терминала IntelliJ IDEA, а выполнены они будут в удаленно запущенном браузере в Selenoid.
+
+> [!NOTE]
+> Перед запусками тестов в папке <code>resources/config</code> необходимо создать файл <code>auth.properties</code> и поместить туда: <br/>
+>
+> <code>vikunjaUsername</code> - логин зарегистрированного в приложении пользователя <br/>
+> <code>vikunjaPassword</code> - логин зарегистрированного в приложении пользователя <br/>
+> <code>vikunjaServerAddress</code> - адрес сервера, на котором развернуто мобильное приложение <br/>
+> <code>browserstackUsername</code> - username пользователя в BrowserStack <br/>
+> <code>browserstackPassword</code> - access key пользователя в BrowserStack <br/>
+> <code>selenoidUsername</code> - логин от вашего сервера Selenoid <br/>
+> <code>selenoidPassword</code> - пароль от вашего сервера Selenoid <br/>
+>
+> **Пример файла:** <br/>
+> ```
+> vikunjaUsername=user12345
+> vikunjaPassword=Test12345
+> vikunjaServerAddress=https://try.vikunja.io
+> browserstackUsername=maksim_giTrYB
+> browserstackPassword=qbe6Mp43а3а3DUK7z
+> selenoidUsername=user1324324
+> selenoidPassword=32324
+> ```
+> - При использовании адреса сервера демо-версии приложения https://try.vikunja.io зарегистрировать пользователя можно по [ссылке](https://try.vikunja.io/register) <br/>
+> - Зарегистрироваться бесплатно в BrowserStack можно по [ссылке](https://www.browserstack.com/users/sign_up)
+
+##### UI-тесты
+
+**Конфигурационные параметры:**
+Параметры аналогичны параметрам при локальном запуске, а также:
+<code>-DremoteHost</code> - адрес вашего удаленного сервера, на котором будут запускаться тесты (по умолчанию не задан - тесты будут запускаться локально)
+
+##### Mobile-тесты
+
+**Конфигурационные параметры:**
+Параметры аналогичны параметрам при локальном запуске, а также:
+<code>--DdeviceName</code> - мобильное устройство для запуска тестов в BrowserStack (по умолчанию: <code>samsung</code>) <br/>
+   - <code>-DdeviceHost=samsung</code> - для запуска на Samsung Galaxy S22 Ultra <br/>
+   - <code>-DdeviceHost=redmi</code> - для запуска на Xiaomi Redmi Note 11 v.11.0 <br/>
+
+> [!NOTE]
+> Возможно добавить новые мобильные устрйоства для запусков тестов в BrowserStack. Для этого в папке <code>resources/config/browserstack</code> необходимо создать файл <code>*название_устройства*.properties</code> и поместить туда: <br/>
+>
+> <code>app=bs://7ae582e9f72cb3ebd6ee90d18199755709133876</code> - адрес приложения в BrowserStack (остается неизменным) <br/>
+> <code>device</code> - название девайса <br/>
+> <code>version</code> - версия ОС <br/>
+> <code>project</code> - название проекта <br/>
+> <code>build</code> - название билда <br/>
+> <code>remoteUrl=https://hub.browserstack.com/wd/hub</code> - адрес удаленного сервера BrowserStack (остается неизменным) <br/>
+> 
+> **Пример файла:** <br/>
+> ```
+> app=bs://7ae582e9f72cb3ebd6ee90d18199755709133876
+> device=Google Pixel 8 Pro
+> version=14.0
+> project=Vikunja Mobile Tests
+> build=browserstack-vikunja-pixel-build
+> remoteUrl=https://hub.browserstack.com/wd/hub
+> ```
+
 
 <a id="jenkins"></a>
-### <img alt="Jenkins" height="25" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="25"/></a><a name="Сборка в Jenkins"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/C27-universe_data_ui_tests/)</a>
+## <img alt="Jenkins" height="25" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="25"/></a><a name="Сборка в Jenkins"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/C27-universe_data_ui_tests/)</a>
 
 <p align="center">  
-<img title="Jenkins" src="images/screenshots/jenkins_build.png" width="850">  
+<img title="Jenkins Main" src="images/screenshotsscreenshots/jenkins_build.png" width="850">  
 </p>
 
+Для запуска сборки необходимо перейти в раздел <code>Build with Parameters</code>, выбрать параметры сборки и нажать кнопку <code>Build</code>
+
+<p align="center">  
+<img title="Jenkins Parameters" src="images/screenshots/jenkins_build_parameters.png" width="850">  
+</p>
+
+<a id="integrations"></a>
+## Интеграции
 <a id="allure"></a>
 ### <img alt="Allure" height="25" src="https://github.com/ozhegov/universe_data_ui_tests/blob/main/images/logo/Allure.svg" width="25"/></a><a name="Интеграция с Allure Report"></a>Интеграция с [Allure Report](https://jenkins.autotests.cloud/job/C27-universe_data_ui_tests/allure/)</a>
 
